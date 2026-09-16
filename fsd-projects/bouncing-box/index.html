@@ -69,8 +69,11 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-        var exampleVariable = 5;
-
+        var positionX = 5;
+			var points = 0;
+			var speed = 10;
+			var positionY = 10;
+			
 
 
 
@@ -80,9 +83,17 @@
          * Each time it is called, it should move the Box to a new location.
          * If the box drifts off the screen, turn it around!
          */
-        function update() {
-          moveBoxTo(positionX);
-          positionx += 200;
+        function update() { moveBoxTo(positionX, positionY);
+          positionX += speed;
+          if (positionX >= boardWidth) {
+          // Code to reverse speed goes here
+          speed *= -1
+				
+			
+
+          
+
+          
 
         
 
@@ -96,11 +107,8 @@
          * - increase the speed
          * - move the box to the left side of the screen.
          */
-        function handleBoxClick() {
-          positionx = 10;
-          changeBoxText(points);
-          points = points + 1;
-          speed += 3;
+         function handleBoxClick() {
+          
 
 
 
