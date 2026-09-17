@@ -83,15 +83,12 @@
          * Each time it is called, it should move the Box to a new location.
          * If the box drifts off the screen, turn it around!
          */
-        function update() { positionX = positionX + speed;
-          moveBoxTo(positionX);
-          if (positionX > boardWidth){
-            speed *= -1
+        function update() { moveboxTo(positionX);//Move box to the right edge
+          positionX += speed;
+          if (positionX > boardWidth) {
+            speed *= -1;
           }
-
-          if (positionX < 0){
-            speed *= -1
-          }
+          
 				
 			
 
