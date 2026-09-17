@@ -8,7 +8,7 @@
       .box {
         width: 70px;
         height: 70px;
-        background-color: rgb(4, 248, 114);
+        background-color: teal;
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -55,9 +55,8 @@
         box.on("click", handleBoxClick);
 
         // moves the Box to a new position on the screen along the X-Axis
-        function moveBoxTo(newposistionX, newpositionY) {
-          box.css("left", newposistionX);
-          box.css('top', newpositionY) //modify to add positionY
+        function moveBoxTo(newPositionX) {
+          box.css("left", newPositionX);
         }
 
         // changes the text displayed on the Box
@@ -70,11 +69,9 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-        var positionX= 200;
-			  var points = 0;
-			  var speed = 200;
-			
-			
+        var positionX = 200
+        var speed = 3
+        var points = 0
 
 
 
@@ -84,19 +81,22 @@
          * Each time it is called, it should move the Box to a new location.
          * If the box drifts off the screen, turn it around!
          */
-        function update() { moveBoxTo(positionX);//Move box to the right edge
-          positionX += speed;
-          if (positionX > boardWidth) {
-            speed *= -1;
+        function update() {
+          moveBoxTo(positionX)
+          positionX += speed
+          if(positionX > boardWidth) {
+            speed *=-1;
+            if (positionX < 0) 
+            speed *=-1;
+           if (positionX > boardWidth) {
+            speed *=-1;
+  
+}
+
+            
+            
+            
           }
-          
-				
-			
-
-          
-
-          
-
         
 
           
@@ -109,12 +109,11 @@
          * - increase the speed
          * - move the box to the left side of the screen.
          */
-         function handleBoxClick() {
-          positionX = 0;
-          changeBoxText(points);
+        function handleBoxClick() {
           ++points;
-          speed += 3;
-
+          changeBoxText(points)
+          speed += 3
+          positionX = 0
 
 
 
@@ -122,7 +121,7 @@
 
 
         
-      });
+      })();
     </script>
   </body>
 </html>
